@@ -8,11 +8,11 @@ import { DrawLine } from "../utils/DrawLine";
 interface pageProps {}
 
 const Page: FC<pageProps> = ({}) => {
-  let globalSocketRef = useRef(null);
+  const globalSocketRef: any = useRef(null);
   const { canvasRef, onMouseDown, onClear, saveAsImage } = useDraw(createLine);
   const [color, setColor] = useState("#0066a7");
 
-  function createLine({ prevPoint, currentPoint, ctx }) {
+  function createLine({ prevPoint, currentPoint, ctx }: Draw) {
     if (globalSocketRef.current != null) {
       globalSocketRef.current.emit("draw-line", {
         prevPoint,
