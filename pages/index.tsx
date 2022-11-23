@@ -70,7 +70,7 @@ const Page: FC<pageProps> = ({}) => {
       </Head>
       <div className="">
         <h1 className="  text-center py-2 text-2xl ">
-          Use your mouse and start drawing
+          Use your mouse and start painting
         </h1>
 
         <canvas
