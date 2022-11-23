@@ -1,6 +1,6 @@
 import { Server } from "socket.io";
 
-const ioHandler = (req, res) => {
+const ioHandler = (res) => {
   if (!res.socket.server.io) {
     console.log("*First use, starting socket.io");
 

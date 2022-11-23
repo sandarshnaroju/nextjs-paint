@@ -62,7 +62,7 @@ const Page: FC<pageProps> = ({}) => {
         globalSocketRef.current.off("clear");
       }
     };
-  }, [canvasRef]);
+  }, [canvasRef, onClear]);
   return (
     <div className="w-screen h-screen justify-center flex bg-white">
       <Head>
