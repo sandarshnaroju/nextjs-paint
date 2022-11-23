@@ -5,3 +5,10 @@ type Draw = {
 };
 
 type Point = { x: number; y: number };
+
+type DrawLineProps = {
+  ctx: CanvasRenderingContext2D;
+  currentPoint: Point;
+  prevPoint: Point | null;
+  color: string;
+};

@@ -1,4 +1,9 @@
-export const DrawLine = ({ prevPoint, currentPoint, ctx, color }) => {
+export const DrawLine = ({
+  prevPoint,
+  currentPoint,
+  ctx,
+  color,
+}: DrawLineProps) => {
   const { x: currX, y: currY } = currentPoint;
   const lineColor = color;
   const lineWidth = 5;
