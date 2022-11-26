@@ -19,7 +19,7 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_measurementId,
 };
 const Page: FC<pageProps> = ({}) => {
-  const globalSocketRef: any = useRef(null);
+  // const globalSocketRef: any = useRef(null);
   const { canvasRef, onMouseDown, onClear, saveAsImage } = useDraw(createLine);
   const [color, setColor] = useState("#0066a7");
 
@@ -85,15 +85,15 @@ const Page: FC<pageProps> = ({}) => {
     //   onClear();
     // });
     // });
-    return () => {
-      if (!globalSocketRef.current && globalSocketRef.current != null) {
-        globalSocketRef.current.off("get-canvas-state");
-        globalSocketRef.current.off("canvas-state-from-server");
+    // return () => {
+    //   if (!globalSocketRef.current && globalSocketRef.current != null) {
+    //     globalSocketRef.current.off("get-canvas-state");
+    //     globalSocketRef.current.off("canvas-state-from-server");
 
-        globalSocketRef.current.off("draw-line");
-        globalSocketRef.current.off("clear");
-      }
-    };
+    //     globalSocketRef.current.off("draw-line");
+    //     globalSocketRef.current.off("clear");
+    //   }
+    // };
   }, [canvasRef, onClear]);
   return (
     <div className="w-screen h-screen justify-center flex bg-white">
@@ -128,11 +128,11 @@ const Page: FC<pageProps> = ({}) => {
         <button
           onClick={() => {
             onClear();
-            if (!globalSocketRef.current) {
-              return;
-            }
+            // if (!globalSocketRef.current) {
+            //   return;
+            // }
 
-            globalSocketRef.current.emit("clear");
+            // globalSocketRef.current.emit("clear");
           }}
           className="border border-black p-2 mt-6 bg-amber-800 text-white "
         >
